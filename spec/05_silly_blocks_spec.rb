@@ -48,7 +48,7 @@ describe "some silly block functions" do
     it "executes the default block 3 times" do
       n = 0
 
-      repeater(3) { n += 1 }
+      repeater(3){ n += 1 }
 
       expect(n).to eq(3)
     end
