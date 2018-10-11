@@ -1,5 +1,5 @@
 def echo(word)
-	word
+	"#{word}"
 end	
 
 def shout(sentence)
@@ -13,18 +13,14 @@ def repeat(word, times=2)
 end
 
 def start_of_word(string, num)
-	string[0,num]
+	"#{string[0,num]}"
 end
 
 def first_word(sentence)
 	words = sentence.split(' ')
-	i = 0
-	while i < words.length
-		result_word = words[0]
-		i += 1
-	end	
-	return result_word
+	return words[0]
 end	
+
 
 def titleize(sentence)
 	words = sentence.split(' ')

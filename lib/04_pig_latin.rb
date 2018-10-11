@@ -30,3 +30,4 @@ def translate(sentence)
     return result.join(" ")
 
 end
+

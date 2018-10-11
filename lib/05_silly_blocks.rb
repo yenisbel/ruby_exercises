@@ -1,28 +1,25 @@
+
 def reverser
 	sentence = yield
-	words = sentence.split(' ')
-	result = ''
-	
-	words.each_with_index do |word, i|
-	   if i > 0
-	   	result += " "
-	   end	
-	   result += word_reverse(word)
+	words = sentence.split
+	result = words.map do |word|
+		reversed_word(word)
 	end
-    result
+	result.join(' ')	
+	
 end
 
-
-def word_reverse(word)
-	reversed = ''
+def reversed_word(word)
+	reversed = ""
 	i = 0
-  	while i < word.length do
-    	reversed = word[i] + reversed
-    	i += 1
-  	end
-
-  return reversed
+	while i < word.length
+		reversed = word[i] + reversed
+		i += 1 
+	end 
+	return reversed
 end	
+
+
 
 def adder(number = 1)
   number + yield   

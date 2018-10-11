@@ -29,7 +29,7 @@ describe "#translate" do
     expect(s).to eq("appleay")
   end
 
-  it "translates a word beginning with a consonant" do
+ it "translates a word beginning with a consonant" do
     s = translate("banana")
     expect(s).to eq("ananabay")
   end
