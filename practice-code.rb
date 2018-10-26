@@ -1,11 +1,41 @@
 require 'rspec/autorun'
 
+#By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+#What is the nth prime number?
+
+def nth_prime(n)
+
+  arry_prime = []
+  value = 2
+
+  while arry_prime.size < n
+    if is_prime?(value)
+      arry_prime << value
+    end
+    value += 1
+  end
+  arry_prime[-1]
+end      
+
+def is_prime?(num)
+  if num <= 1
+    return false
+  end
+  value = 2
+  while value < num
+    return false if (num % value == 0)
+    value += 1
+  end
+  true
+end 
+
+
+
 # Define a method that accepts two arguments, a string and an integer. The method should return 
 #a copy of the string with the nth letter removed.
 def remove_nth_letter(string, n)
   string[0..n-1] + string[n+1..-1]
-  
-
 end
 
 # Define a method that chunks an array into a nested array of sub-arrays of length n. The last array may be of 
@@ -163,6 +193,12 @@ def print_test(method_name, args, expectation)
     $failure_count += 1
 end
 
+
+
+
+puts "\wnth_prime:\n" + "*" * 15 + "\n"
+test_nth_prime(6, 13)
+test_nth_prime(10, 29)
 puts "\wremove_nth_letter:\n" + "*" * 15 + "\n"
 test_remove_nth_letter("helloworld", 5, "helloorld")
 test_remove_nth_letter("helloworld", -3, "hellowold")
