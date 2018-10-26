@@ -31,6 +31,27 @@ def is_prime?(num)
 end 
 
 
+#Largest Prime Factor
+#The prime factors of 13195 are 5, 7, 13 and 29. Thus, the largest prime factor of 13195 is 29.
+#What is the largest prime factor of the number 600851475143 ?
+
+def largest_factor(number)
+  result = prime_factors(number).sort
+  result[-1]
+end
+
+def prime_factors(num)
+  value = 1
+  arry = []
+  while value < num
+    if is_prime?(value) && (num % value == 0)
+      arry << value
+    end  
+    value += 1
+  end    
+  arry
+end  
+
 
 # Define a method that accepts two arguments, a string and an integer. The method should return 
 #a copy of the string with the nth letter removed.
@@ -199,6 +220,9 @@ end
 puts "\wnth_prime:\n" + "*" * 15 + "\n"
 test_nth_prime(6, 13)
 test_nth_prime(10, 29)
+puts "\wlargest_factor:\n" + "*" * 15 + "\n"
+test_largest_factor(13195, 29)
+test_largest_factor(3195, 71)
 puts "\wremove_nth_letter:\n" + "*" * 15 + "\n"
 test_remove_nth_letter("helloworld", 5, "helloorld")
 test_remove_nth_letter("helloworld", -3, "hellowold")
